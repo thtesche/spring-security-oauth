@@ -58,7 +58,6 @@ import java.util.Set;
  * granter}.
  * </p>
  *
- * <p>
  * Clients must be authenticated using a Spring Security {@link Authentication} to access this endpoint, and the client
  * id is extracted from the authentication token. The best way to arrange this (as per the OAuth2 spec) is to use HTTP
  * basic authentication for this endpoint with standard Spring Security support.

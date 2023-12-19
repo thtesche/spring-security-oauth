@@ -32,7 +32,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * &#064;EnableWebSecurity} somewhere in your application, either in the same place as you use this annotation, or
  * somewhere else.
  *
- * <p>
  * The annotation creates a {@link WebSecurityConfigurerAdapter} with a hard-coded {@link Order} (of 3). It's not
  * possible to change the order right now owing to technical limitations in Spring, so you must avoid using order=3 in
  * other WebSecurityConfigurerAdapters in your application (Spring Security will let you know if you forget).

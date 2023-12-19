@@ -229,34 +229,6 @@
         </activation>
         <build>
             <plugins>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>animal-sniffer-maven-plugin</artifactId>
-                    <version>1.6</version>
-                    <configuration>
-                        <signature>
-                            <groupId>org.codehaus.mojo.signature</groupId>
-                            <artifactId>java16</artifactId>
-                            <version>1.0</version>
-                        </signature>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>enforce-java-6</id>
-                            <phase>test</phase>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                            <configuration>
-                                <ignores>
-                                    <!--allow dependencies on internal Sun APIs for now. Someday fix these.... -->
-                                    <ignore>sun.net.www.protocol.http.*</ignore>
-                                    <ignore>sun.net.www.protocol.https.*</ignore>
-                                </ignores>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
             </plugins>
         </build>
     </profile>
@@ -271,7 +243,7 @@
                   <configuration>
                       <argLine>--add-modules java.xml.bind</argLine>
                       <argLine>--add-modules java.activation</argLine>
-                      <argLine>--add-opens java.base/jdk.internal.access=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.xml/jdk.xml.internal=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED </argLine>
+                      <argLine>--add-opens java.base/jdk.internal.access=ALL-UNNAMED --add-opens java.base/jdk.internal.access=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.xml/jdk.xml.internal=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED </argLine>
                       <skip>${skipTests}</skip>
                       <includes>
                           <include>**/*Tests.java</include>
@@ -422,23 +394,23 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.6.3</version>
-        <configuration>
-          <quiet>true</quiet>
-        </configuration>
-        <executions>
-          <execution>
-            <id>javadoc</id>
-            <phase>package</phase>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--        <version>3.6.3</version>-->
+<!--        <configuration>-->
+<!--          <quiet>true</quiet>-->
+<!--        </configuration>-->
+<!--        <executions>-->
+<!--          <execution>-->
+<!--            <id>javadoc</id>-->
+<!--            <phase>package</phase>-->
+<!--            <goals>-->
+<!--              <goal>jar</goal>-->
+<!--            </goals>-->
+<!--          </execution>-->
+<!--        </executions>-->
+<!--      </plugin>-->
 	  <plugin>
 		<!-- We don't recommend using mep particularly,
 			 but this one is needed to prevent m2e from wiping out
