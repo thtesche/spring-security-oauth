@@ -60,7 +60,6 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
  * will also authenticate the user.
  * </p>
  *
- * <p>
  * If this filter is used the Spring Security context will contain an OAuth2Authentication encapsulating (as the
  * authorization request) the form parameters coming into the filter and the client id from the already authenticated
  * client authentication, and the authenticated user token extracted from the request and validated using the

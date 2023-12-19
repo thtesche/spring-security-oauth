@@ -83,7 +83,6 @@ import java.util.Set;
  * Endpoint via <code>response_type=token</code>.
  * </p>
  *
- * <p>
  * This endpoint should be secured so that it is only accessible to fully authenticated users (as a minimum requirement)
  * since it represents a request from a valid user to act on his or her behalf.
  * </p>

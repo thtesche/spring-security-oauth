@@ -26,7 +26,6 @@ import org.springframework.stereotype.Component;
  * own endpoints defined with &#64;Controller). Use with &#64;RequestMapping and all the other &#64;Controller features
  * (and match with a {@link FrameworkEndpointHandlerMapping} in the servlet context).</p>
  *
- * <p>
  * Users of the Spring Security OAuth2 XSD namespace need not use this feature explicitly as the relevant handlers will
  * be registered by the parsers.
  * </p>
