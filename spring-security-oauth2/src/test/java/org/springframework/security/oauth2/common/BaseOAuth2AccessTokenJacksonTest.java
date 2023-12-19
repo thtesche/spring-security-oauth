@@ -61,7 +61,7 @@ abstract class BaseOAuth2AccessTokenJacksonTest {
 	public ExpectedException thrown = ExpectedException.none();
 
 	@Mock
-	protected Date expiration;
+	Date expiration;
 
 	protected DefaultOAuth2AccessToken accessToken;
 

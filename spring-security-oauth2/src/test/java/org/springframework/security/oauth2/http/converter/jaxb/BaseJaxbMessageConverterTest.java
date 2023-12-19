@@ -26,6 +26,8 @@ import javax.xml.bind.JAXBContext;
 
 import org.junit.Before;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
 import org.mockito.Mock;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
@@ -65,7 +67,7 @@ abstract class BaseJaxbMessageConverterTest {
 		mockStatic(System.class);
 		long now = 1323123715041L;
 		when(System.currentTimeMillis()).thenReturn(now);
-		when(expiration.before(any(Date.class))).thenReturn(false);
+		when(expiration.before(new Date(now))).thenReturn(false);
 		when(expiration.getTime()).thenReturn(now + 10000);
 
 		output = new ByteArrayOutputStream();
@@ -74,7 +76,7 @@ abstract class BaseJaxbMessageConverterTest {
 		when(outputMessage.getHeaders()).thenReturn(headers);
 		when(outputMessage.getBody()).thenReturn(output);
 	}
-	
+
 
 	protected InputStream createInputStream(String in) throws UnsupportedEncodingException {
 		return new ByteArrayInputStream(in.getBytes("UTF-8"));
@@ -83,7 +85,7 @@ abstract class BaseJaxbMessageConverterTest {
 	protected String getOutput() throws UnsupportedEncodingException {
 		return output.toString("UTF-8");
 	}
-	
+
 	protected void useMockJAXBContext(Object object, Class<?> jaxbClassToBeBound) throws Exception {
 		JAXBContext jaxbContext = JAXBContext.newInstance(jaxbClassToBeBound);
 		when(context.createMarshaller()).thenReturn(jaxbContext.createMarshaller());
