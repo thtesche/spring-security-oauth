@@ -82,7 +82,6 @@ import org.springframework.web.servlet.HandlerInterceptor;
 /**
  * Configure the properties and enhanced functionality of the Authorization Server endpoints.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Rob Winch
@@ -256,7 +255,7 @@ public final class AuthorizationServerEndpointsConfigurer {
 	 * Explicitly disable the approval store, even if one would normally be added automatically (usually when JWT is not
 	 * used). Without an approval store the user can only be asked to approve or deny a grant without any more granular
 	 * decisions.
-	 * 
+	 *
 	 * @return this for fluent builder
 	 */
 	public AuthorizationServerEndpointsConfigurer approvalStoreDisabled() {
@@ -291,7 +290,7 @@ public final class AuthorizationServerEndpointsConfigurer {
 
 	/**
 	 * The AuthenticationManager for the password grant.
-	 * 
+	 *
 	 * @param authenticationManager an AuthenticationManager, fully initialized
 	 * @return this for a fluent style
 	 */

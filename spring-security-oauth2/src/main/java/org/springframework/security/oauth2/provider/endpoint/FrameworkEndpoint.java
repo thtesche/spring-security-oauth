@@ -25,17 +25,16 @@ import org.springframework.stereotype.Component;
  * <p>Synonym for &#64;Controller but only used for endpoints provided by the framework (so it never clashes with user's
  * own endpoints defined with &#64;Controller). Use with &#64;RequestMapping and all the other &#64;Controller features
  * (and match with a {@link FrameworkEndpointHandlerMapping} in the servlet context).</p>
- * 
+ *
  * <p>
  * Users of the Spring Security OAuth2 XSD namespace need not use this feature explicitly as the relevant handlers will
  * be registered by the parsers.
  * </p>
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
- * 
+ *
  */
 @Component
 @Retention(RetentionPolicy.RUNTIME)

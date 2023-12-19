@@ -22,7 +22,6 @@ import org.springframework.security.oauth2.common.OAuth2AccessToken;
  * Interface for granters of access tokens. Various grant types are defined in the specification, and each of those has
  * an implementation, leaving room for extensions to the specification as needed.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer

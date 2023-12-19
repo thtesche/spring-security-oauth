@@ -20,11 +20,10 @@ import org.springframework.security.oauth2.provider.OAuth2Authentication;
 /**
  * Converter interface for token service implementations that store authentication data inside the token.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
- * 
+ *
  */
 @Deprecated
 public interface AccessTokenConverter {
@@ -36,7 +35,7 @@ public interface AccessTokenConverter {
 	final String EXP = "exp";
 
 	final String JTI = "jti";
-	
+
 	final String GRANT_TYPE = "grant_type";
 
 	final String ATI = "ati";
@@ -48,16 +47,16 @@ public interface AccessTokenConverter {
 	/**
 	 * @param token an access token
 	 * @param authentication the current OAuth authentication
-	 * 
+	 *
 	 * @return a map representation of the token suitable for a JSON response
-	 * 
+	 *
 	 */
 	Map<String, ?> convertAccessToken(OAuth2AccessToken token, OAuth2Authentication authentication);
 
 	/**
 	 * Recover an access token from the converted value. Half the inverse of
 	 * {@link #convertAccessToken(OAuth2AccessToken, OAuth2Authentication)}.
-	 * 
+	 *
 	 * @param value the token value
 	 * @param map information decoded from an access token
 	 * @return an access token
@@ -67,7 +66,7 @@ public interface AccessTokenConverter {
 	/**
 	 * Recover an {@link OAuth2Authentication} from the converted access token. Half the inverse of
 	 * {@link #convertAccessToken(OAuth2AccessToken, OAuth2Authentication)}.
-	 * 
+	 *
 	 * @param map information decoded from an access token
 	 * @return an authentication representing the client and user (if there is one)
 	 */

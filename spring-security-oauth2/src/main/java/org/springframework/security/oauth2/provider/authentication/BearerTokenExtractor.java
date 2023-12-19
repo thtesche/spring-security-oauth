@@ -28,11 +28,10 @@ import org.springframework.security.web.authentication.preauth.PreAuthenticatedA
  * form "Bearer <code>&lt;TOKEN&gt;</code>", or as a request parameter if that fails). The access token is the principal in
  * the authentication token that is extracted.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
- * 
+ *
  */
 @Deprecated
 public class BearerTokenExtractor implements TokenExtractor {
@@ -70,7 +69,7 @@ public class BearerTokenExtractor implements TokenExtractor {
 
 	/**
 	 * Extract the OAuth bearer token from a header.
-	 * 
+	 *
 	 * @param request The request.
 	 * @return The token, or null if no OAuth authorization header was supplied.
 	 */

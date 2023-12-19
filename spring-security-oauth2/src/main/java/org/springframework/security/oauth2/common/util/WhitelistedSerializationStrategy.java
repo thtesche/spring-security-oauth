@@ -31,7 +31,6 @@ import org.springframework.util.ClassUtils;
 /**
  * A {@link SerializationStrategy} which uses a whitelist of allowed classes for deserialization.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Artem Smotrakov

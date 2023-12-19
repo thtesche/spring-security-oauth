@@ -31,17 +31,16 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * resource (URL paths and resource id). In order to use this filter you must {@link EnableWebSecurity
  * &#064;EnableWebSecurity} somewhere in your application, either in the same place as you use this annotation, or
  * somewhere else.
- * 
+ *
  * <p>
  * The annotation creates a {@link WebSecurityConfigurerAdapter} with a hard-coded {@link Order} (of 3). It's not
  * possible to change the order right now owing to technical limitations in Spring, so you must avoid using order=3 in
  * other WebSecurityConfigurerAdapters in your application (Spring Security will let you know if you forget).
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
- * 
+ *
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

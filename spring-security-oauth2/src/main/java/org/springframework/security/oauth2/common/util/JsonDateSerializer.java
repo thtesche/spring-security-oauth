@@ -28,7 +28,6 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 /**
  * JSON serializer for Jackson to handle regular date instances as timestamps in ISO format.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer

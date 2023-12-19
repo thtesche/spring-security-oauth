@@ -29,7 +29,6 @@ import com.fasterxml.jackson.databind.ser.std.StdSerializer;
  *
  * The expected format of the access token is defined by <a href="https://tools.ietf.org/html/draft-ietf-oauth-v2-22#section-5.1">Successful Response</a>.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Rob Winch

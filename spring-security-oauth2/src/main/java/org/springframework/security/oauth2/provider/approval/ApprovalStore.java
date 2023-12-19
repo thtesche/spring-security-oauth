@@ -18,9 +18,8 @@ package org.springframework.security.oauth2.provider.approval;
 import java.util.Collection;
 
 /**
- * Interface for saving, retrieving and revoking user approvals (per client, per scope). 
+ * Interface for saving, retrieving and revoking user approvals (per client, per scope).
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer

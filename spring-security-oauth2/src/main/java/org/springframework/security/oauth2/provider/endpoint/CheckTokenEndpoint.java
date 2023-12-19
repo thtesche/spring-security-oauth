@@ -38,7 +38,6 @@ import java.util.Map;
 /**
  * Controller which decodes access tokens for clients who are not able to do so (or where opaque token values are used).
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Luke Taylor
@@ -59,7 +58,7 @@ public class CheckTokenEndpoint {
 	public CheckTokenEndpoint(ResourceServerTokenServices resourceServerTokenServices) {
 		this.resourceServerTokenServices = resourceServerTokenServices;
 	}
-	
+
 	/**
 	 * @param exceptionTranslator the exception translator to set
 	 */

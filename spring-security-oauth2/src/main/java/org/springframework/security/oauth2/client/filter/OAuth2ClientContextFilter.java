@@ -28,7 +28,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 /**
  * Security filter for an OAuth2 client.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Ryan Heaton

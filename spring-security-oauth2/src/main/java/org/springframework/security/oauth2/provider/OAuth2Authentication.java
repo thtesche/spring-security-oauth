@@ -8,7 +8,6 @@ import org.springframework.security.core.CredentialsContainer;
  * An OAuth 2 authentication token can contain two authentications: one for the client and one for the user. Since some
  * OAuth authorization grants don't require user authentication, the user authentication may be null.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Ryan Heaton

@@ -34,7 +34,6 @@ import java.util.*;
  * {@link TokenStore} is needed, but remember to use the same {@link JwtAccessTokenConverter} instance (or one with the same
  * verifier) as was used when the tokens were minted.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
@@ -49,7 +48,7 @@ public class JwtTokenStore implements TokenStore {
 
 	/**
 	 * Create a JwtTokenStore with this token enhancer (should be shared with the DefaultTokenServices if used).
-	 * 
+	 *
 	 * @param jwtTokenEnhancer
 	 */
 	public JwtTokenStore(JwtAccessTokenConverter jwtTokenEnhancer) {
@@ -58,7 +57,7 @@ public class JwtTokenStore implements TokenStore {
 
 	/**
 	 * ApprovalStore to be used to validate and restrict refresh tokens.
-	 * 
+	 *
 	 * @param approvalStore the approvalStore to set
 	 */
 	public void setApprovalStore(ApprovalStore approvalStore) {
@@ -131,7 +130,7 @@ public class JwtTokenStore implements TokenStore {
 		}
 		if (encodedRefreshToken.getExpiration()!=null) {
 			return new DefaultExpiringOAuth2RefreshToken(encodedRefreshToken.getValue(),
-					encodedRefreshToken.getExpiration());			
+					encodedRefreshToken.getExpiration());
 		}
 		return new DefaultOAuth2RefreshToken(encodedRefreshToken.getValue());
 	}

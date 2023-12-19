@@ -15,12 +15,11 @@ import org.springframework.security.oauth2.common.util.OAuth2Utils;
  * request's authentication information. Does not expose public setters so that clients can not mutate state if they
  * respect the declared type of the request.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Amanda Anganes
  * @author Dave Syer
- * 
+ *
  */
 @Deprecated
 public class OAuth2Request extends BaseRequest implements Serializable {
@@ -142,7 +141,7 @@ public class OAuth2Request extends BaseRequest implements Serializable {
 	/**
 	 * Update the scope and create a new request. All the other properties are the same (including the request
 	 * parameters).
-	 * 
+	 *
 	 * @param scope the new scope
 	 * @return a new request with the narrowed scope
 	 */
@@ -170,7 +169,7 @@ public class OAuth2Request extends BaseRequest implements Serializable {
 	/**
 	 * If this request was for an access token to be refreshed, then the {@link TokenRequest} that led to the refresh
 	 * <i>may</i> be available here if it is known.
-	 * 
+	 *
 	 * @return the refresh token request (may be null)
 	 */
 	public TokenRequest getRefreshTokenRequest() {
@@ -179,7 +178,7 @@ public class OAuth2Request extends BaseRequest implements Serializable {
 
 	/**
 	 * Tries to discover the grant type requested for the token associated with this request.
-	 * 
+	 *
 	 * @return the grant type if known, or null otherwise
 	 */
 	public String getGrantType() {

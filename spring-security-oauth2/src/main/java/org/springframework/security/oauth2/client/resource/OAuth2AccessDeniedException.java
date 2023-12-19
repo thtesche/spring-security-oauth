@@ -6,7 +6,6 @@ import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;
  * When access is denied we usually want a 403, but we want the same treatment as all the other OAuth2Exception types,
  * so this is not a Spring Security AccessDeniedException.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Ryan Heaton

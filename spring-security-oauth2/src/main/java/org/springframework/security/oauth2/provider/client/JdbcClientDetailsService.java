@@ -51,7 +51,6 @@ import org.springframework.util.StringUtils;
 /**
  * Basic, JDBC implementation of the client details service.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  */
@@ -250,9 +249,9 @@ public class JdbcClientDetailsService implements ClientDetailsService, ClientReg
 
 	/**
 	 * Row mapper for ClientDetails.
-	 * 
+	 *
 	 * @author Dave Syer
-	 * 
+	 *
 	 */
 	private static class ClientDetailsRowMapper implements RowMapper<ClientDetails> {
 		private JsonMapper mapper = createJsonMapper();

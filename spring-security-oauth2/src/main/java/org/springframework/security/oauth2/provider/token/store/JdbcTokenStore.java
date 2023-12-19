@@ -31,7 +31,6 @@ import org.springframework.util.Assert;
 /**
  * Implementation of token services that stores tokens in a database.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Ken Dombeck
@@ -146,7 +145,7 @@ public class JdbcTokenStore implements TokenStore {
 		if (token.getRefreshToken() != null) {
 			refreshToken = token.getRefreshToken().getValue();
 		}
-		
+
 		if (readAccessToken(token.getValue())!=null) {
 			removeAccessToken(token.getValue());
 		}

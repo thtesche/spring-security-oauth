@@ -20,7 +20,6 @@ import java.security.GeneralSecurityException;
 /**
  * Elliptic Curve Digital Signature Algorithm (ECDSA) utilities.
  *
- * <p>
  * Borrowed from <code>com.nimbusds.jose.crypto.ECDSA</code>.
  */
 final class EllipticCurveSignatureHelper {

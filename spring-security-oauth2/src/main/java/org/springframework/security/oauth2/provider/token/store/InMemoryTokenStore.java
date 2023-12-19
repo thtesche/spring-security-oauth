@@ -21,7 +21,6 @@ import org.springframework.util.Assert;
 /**
  * Implementation of token services that stores tokens in memory.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Ryan Heaton
@@ -63,7 +62,7 @@ public class InMemoryTokenStore implements TokenStore {
 
 	/**
 	 * The number of tokens to store before flushing expired tokens. Defaults to 1000.
-	 * 
+	 *
 	 * @param flushInterval the interval to set
 	 */
 	public void setFlushInterval(int flushInterval) {
@@ -72,7 +71,7 @@ public class InMemoryTokenStore implements TokenStore {
 
 	/**
 	 * The interval (count of token inserts) between flushing expired tokens.
-	 * 
+	 *
 	 * @return the flushInterval the flush interval
 	 */
 	public int getFlushInterval() {

@@ -19,11 +19,10 @@ import org.springframework.security.oauth2.provider.OAuth2Authentication;
  * Strategy for enhancing an access token before it is stored by an {@link AuthorizationServerTokenServices}
  * implementation.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
- * 
+ *
  */
 @Deprecated
 public interface TokenEnhancer {
@@ -31,7 +30,7 @@ public interface TokenEnhancer {
 	/**
 	 * Provides an opportunity for customization of an access token (e.g. through its additional information map) during
 	 * the process of creating a new token for use by a client.
-	 * 
+	 *
 	 * @param accessToken the current access token with its expiration and refresh token
 	 * @param authentication the current authentication including client and user details
 	 * @return a new token enhanced with additional information

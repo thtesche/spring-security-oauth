@@ -5,7 +5,6 @@ import java.util.Map;
 /**
  * Special exception thrown when a user redirect is required in order to obtain an OAuth2 access token.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Ryan Heaton
@@ -30,7 +29,7 @@ public class UserRedirectRequiredException extends RuntimeException {
 
 	/**
 	 * The uri to which the user is to be redirected.
-	 * 
+	 *
 	 * @return The uri to which the user is to be redirected.
 	 */
 	public String getRedirectUri() {
@@ -39,7 +38,7 @@ public class UserRedirectRequiredException extends RuntimeException {
 
 	/**
 	 * The request parameters that are to be appended to the uri.
-	 * 
+	 *
 	 * @return The request parameters that are to be appended to the uri.
 	 */
 	public Map<String, String> getRequestParams() {
@@ -48,7 +47,7 @@ public class UserRedirectRequiredException extends RuntimeException {
 
 	/**
 	 * The key to the state to preserve.
-	 * 
+	 *
 	 * @return The key to the state to preserve.
 	 */
 	public String getStateKey() {
@@ -57,7 +56,7 @@ public class UserRedirectRequiredException extends RuntimeException {
 
 	/**
 	 * The key to the state to preserve.
-	 * 
+	 *
 	 * @param stateKey The key to the state to preserve.
 	 */
 	public void setStateKey(String stateKey) {
@@ -66,7 +65,7 @@ public class UserRedirectRequiredException extends RuntimeException {
 
 	/**
 	 * Some state that needs to be preserved and set up in the security context when the user returns.
-	 * 
+	 *
 	 * @return The state that needs to be preserved.
 	 */
 	public Object getStateToPreserve() {
@@ -75,7 +74,7 @@ public class UserRedirectRequiredException extends RuntimeException {
 
 	/**
 	 * The state that needs to be preserved and set up in the security context when the user returns.
-	 * 
+	 *
 	 * @param stateToPreserve The state.
 	 */
 	public void setStateToPreserve(Object stateToPreserve) {

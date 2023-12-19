@@ -28,7 +28,6 @@ import java.util.TreeSet;
  * Basic key generator taking into account the client id, scope, resource ids and username (principal name) if they
  * exist.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer

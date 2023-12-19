@@ -1,11 +1,11 @@
 /*
  * Copyright 2002-2019 the original author or authors.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
- * 
+ *
  * https://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
@@ -82,18 +82,17 @@ import java.util.Set;
  * {@link TokenEndpoint Token Endpoint}, except in the implicit grant type (where they come from the Authorization
  * Endpoint via <code>response_type=token</code>.
  * </p>
- * 
+ *
  * <p>
  * This endpoint should be secured so that it is only accessible to fully authenticated users (as a minimum requirement)
  * since it represents a request from a valid user to act on his or her behalf.
  * </p>
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
  * @author Vladimir Kryachko
- * 
+ *
  */
 @FrameworkEndpoint
 @SessionAttributes({AuthorizationEndpoint.AUTHORIZATION_REQUEST_ATTR_NAME, AuthorizationEndpoint.ORIGINAL_AUTHORIZATION_REQUEST_ATTR_NAME})
@@ -660,7 +659,7 @@ public class AuthorizationEndpoint extends AbstractEndpoint {
 		}
 
 	}
-	
+
 	private void setCacheControlHeaders() {
 		ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
 		if (servletRequestAttributes != null) {
