@@ -63,22 +63,22 @@ import org.springframework.web.client.RestOperations;
  * {@link OAuth2ProtectedResourceDetails} instance that will be used to create the OAuth2
  * context for tests. Example:
  * </p>
- * 
+ *
  * <pre>
  * &#064;OAuth2ContextConfiguration(ResourceOwnerPasswordProtectedResourceDetails.class)
  * public class MyIntegrationTests implements RestTemplateHolder {
- * 
+ *
  * 	&#064;Rule
  * 	public OAuth2ContextSetup context = OAuth2ContextSetup.withEnvironment(this,
  * 			TestEnvironment.instance());
- * 
+ *
  * 	&#064;Test
  * 	public void testSomethingWithClientCredentials() {
  * 		// This call will be authenticated with the client credentials in
  * 		// MyClientDetailsResource
  * 		getRestTemplate().getForObject(&quot;https://myserver/resource&quot;, String.class);
  * 	}
- * 
+ *
  * 	// This class is used to initialize the OAuth2 context for the test methods.
  * 	static class MyClientDetailsResource extends
  * 			ResourceOwnerPasswordProtectedResourceDetails {
@@ -86,18 +86,17 @@ import org.springframework.web.client.RestOperations;
  *             ... do stuff with environment to initialize the password credentials
  *         }
  * 	}
- * 
+ *
  * }
  * </pre>
- * 
+ *
  * @see OAuth2ContextConfiguration
  * @see BeforeOAuth2Context
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
- * 
+ *
  */
 @SuppressWarnings("deprecation")
 @Deprecated
@@ -128,11 +127,11 @@ public class OAuth2ContextSetup extends TestWatchman {
 	/**
 	 * Create a new client that can inject an Environment into its protected resource
 	 * details.
-	 * 
+	 *
 	 * @param clientHolder receives an OAuth2RestTemplate with the authenticated client
 	 * for the duration of a test
 	 * @param environment a Spring Environment that can be used to initialize the client
-	 * 
+	 *
 	 * @return a rule that wraps test methods in an OAuth2 context
 	 */
 	public static OAuth2ContextSetup withEnvironment(RestTemplateHolder clientHolder,
@@ -143,12 +142,12 @@ public class OAuth2ContextSetup extends TestWatchman {
 	/**
 	 * Create a new client that can inject a {@link TestAccounts} instance into its
 	 * protected resource details.
-	 * 
+	 *
 	 * @param clientHolder receives an OAuth2RestTemplate with the authenticated client
 	 * for the duration of a test
 	 * @param testAccounts a test account generator that can be used to initialize the
 	 * client
-	 * 
+	 *
 	 * @return a rule that wraps test methods in an OAuth2 context
 	 */
 	public static OAuth2ContextSetup withTestAccounts(RestTemplateHolder clientHolder,
@@ -160,7 +159,7 @@ public class OAuth2ContextSetup extends TestWatchman {
 	 * Create a new client that knows how to create its protected resource with no
 	 * externalization help. Typically it will use resource details which accept an
 	 * instance of the current test case (downcasting it from Object). For example
-	 * 
+	 *
 	 * <pre>
 	 * static class MyClientDetailsResource extends ClientCredentialsProtectedResourceDetails {
 	 * 	public MyClientDetailsResource(Object target) {
@@ -169,10 +168,10 @@ public class OAuth2ContextSetup extends TestWatchman {
 	 *         }
 	 * }
 	 * </pre>
-	 * 
+	 *
 	 * @param clientHolder receives an OAuth2RestTemplate with the authenticated client
 	 * for the duration of a test
-	 * 
+	 *
 	 * @return a rule that wraps test methods in an OAuth2 context
 	 */
 	public static OAuth2ContextSetup standard(RestTemplateHolder clientHolder) {
@@ -230,7 +229,7 @@ public class OAuth2ContextSetup extends TestWatchman {
 	 * Get the current access token. Should be available inside a test method as long as a
 	 * resource has been setup with {@link OAuth2ContextConfiguration
 	 * &#64;OAuth2ContextConfiguration}.
-	 * 
+	 *
 	 * @return the current access token initializing it if necessary
 	 */
 	public OAuth2AccessToken getAccessToken() {

@@ -22,7 +22,6 @@ import org.springframework.security.oauth.consumer.OAuthConsumerToken;
 /**
  * Token services for an OAuth consumer.
  *
- * <p>
  * @deprecated The OAuth 1.0 Protocol <a href="https://tools.ietf.org/html/rfc5849">RFC 5849</a> is obsoleted by the OAuth 2.0 Authorization Framework <a href="https://tools.ietf.org/html/rfc6749">RFC 6749</a>.
  *
  * @author Ryan Heaton
@@ -41,7 +40,7 @@ public interface OAuthConsumerTokenServices {
   /**
    * Store a token for a specified resource. If the token {@link OAuthConsumerToken#isAccessToken() is not an access token},
    * the token services may not have to store it and instead rely on the implementation of the
-   * {@link org.springframework.security.oauth.consumer.rememberme.OAuthRememberMeServices remember-me services}. 
+   * {@link org.springframework.security.oauth.consumer.rememberme.OAuthRememberMeServices remember-me services}.
    *
    * @param resourceId The id of the protected resource.
    * @param token The token to store.

@@ -48,7 +48,6 @@ import org.springframework.util.Assert;
  * uses it to populate the Spring Security context with an {@link OAuth2Authentication} (if used in conjunction with an
  * {@link OAuth2AuthenticationManager}).
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer

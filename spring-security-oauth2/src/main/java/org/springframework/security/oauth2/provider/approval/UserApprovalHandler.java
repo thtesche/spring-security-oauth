@@ -9,7 +9,6 @@ import org.springframework.security.oauth2.provider.AuthorizationRequest;
  * Basic interface for determining whether a given client authentication request has been
  * approved by the current user.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Ryan Heaton
@@ -24,7 +23,7 @@ public interface UserApprovalHandler {
 	 * Tests whether the specified authorization request has been approved by the current
 	 * user (if there is one).
 	 * </p>
-	 * 
+	 *
 	 * @param authorizationRequest the authorization request.
 	 * @param userAuthentication the user authentication for the current user.
 	 * @return true if the request has been approved, false otherwise
@@ -40,7 +39,7 @@ public interface UserApprovalHandler {
 	 * AuthorizationEndpoint before sending the user to the Approval page. If this method
 	 * sets oAuth2Request.approved to true, the Approval page will be skipped.
 	 * </p>
-	 * 
+	 *
 	 * @param authorizationRequest the authorization request.
 	 * @param userAuthentication the user authentication
 	 * @return the AuthorizationRequest, modified if necessary
@@ -57,7 +56,7 @@ public interface UserApprovalHandler {
 	 * approved, and others are rejected), implementations may need to be able to modify
 	 * the {@link AuthorizationRequest} before a token is generated from it.
 	 * </p>
-	 * 
+	 *
 	 * @param authorizationRequest the authorization request.
 	 * @param userAuthentication the user authentication
 	 * @return the AuthorizationRequest, modified if necessary
@@ -70,7 +69,7 @@ public interface UserApprovalHandler {
 	 * Typically this will be rendered into a view (HTML etc.) to prompt for the approval,
 	 * so it needs to contain information about the grant (scopes and client id for
 	 * instance).
-	 * 
+	 *
 	 * @param authorizationRequest the authorization request
 	 * @param userAuthentication the user authentication
 	 * @return a model map for rendering to the user to ask for approval

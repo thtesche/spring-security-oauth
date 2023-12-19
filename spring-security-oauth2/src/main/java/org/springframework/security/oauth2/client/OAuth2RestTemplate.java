@@ -37,7 +37,6 @@ import org.springframework.web.client.RestTemplate;
 /**
  * Rest template that is able to make OAuth2-authenticated REST requests with the credentials of the provided resource.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Ryan Heaton
@@ -78,7 +77,7 @@ public class OAuth2RestTemplate extends RestTemplate implements OAuth2RestOperat
 	/**
 	 * Strategy for extracting an Authorization header from an access token and the request details. Defaults to the
 	 * simple form "TOKEN_TYPE TOKEN_VALUE".
-	 * 
+	 *
 	 * @param authenticator the authenticator to use
 	 */
 	public void setAuthenticator(OAuth2RequestAuthenticator authenticator) {
@@ -89,7 +88,7 @@ public class OAuth2RestTemplate extends RestTemplate implements OAuth2RestOperat
 	 * Flag to determine whether a request that has an existing access token, and which then leads to an
 	 * AccessTokenRequiredException should be retried (immediately, once). Useful if the remote server doesn't recognize
 	 * an old token which is stored in the client, but is happy to re-grant it.
-	 * 
+	 *
 	 * @param retryBadAccessTokens the flag to set (default true)
 	 */
 	public void setRetryBadAccessTokens(boolean retryBadAccessTokens) {
@@ -103,7 +102,7 @@ public class OAuth2RestTemplate extends RestTemplate implements OAuth2RestOperat
 		}
 		super.setErrorHandler(errorHandler);
 	}
-	
+
 	@Override
 	public OAuth2ProtectedResourceDetails getResource() {
 		return resource;
@@ -171,7 +170,7 @@ public class OAuth2RestTemplate extends RestTemplate implements OAuth2RestOperat
 	 * Acquire or renew an access token for the current context if necessary. This method will be called automatically
 	 * when a request is executed (and the result is cached), but can also be called as a standalone method to
 	 * pre-populate the token.
-	 * 
+	 *
 	 * @return an access token
 	 */
 	public OAuth2AccessToken getAccessToken() throws UserRedirectRequiredException {

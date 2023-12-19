@@ -25,7 +25,6 @@ import org.springframework.security.oauth2.common.OAuth2RefreshToken;
 /**
  * A strategy which knows how to obtain an access token for a specific resource.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Ryan Heaton
@@ -36,7 +35,7 @@ public interface AccessTokenProvider {
 
 	/**
 	 * Obtain a new access token for the specified protected resource.
-	 * 
+	 *
 	 * @param details The protected resource for which this provider is to obtain an access token.
 	 * @param parameters The parameters of the request giving context for the token details if any.
 	 * @return The access token for the specified protected resource. The return value may NOT be null.
@@ -50,7 +49,7 @@ public interface AccessTokenProvider {
 
 	/**
 	 * Whether this provider supports the specified resource.
-	 * 
+	 *
 	 * @param resource The resource.
 	 * @return Whether this provider supports the specified resource.
 	 */

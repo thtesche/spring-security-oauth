@@ -20,11 +20,10 @@ import org.springframework.security.core.Authentication;
 /**
  * Utility interface for converting a user authentication to and from a Map.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
- * 
+ *
  */
 @Deprecated
 public interface UserAuthenticationConverter {
@@ -35,7 +34,7 @@ public interface UserAuthenticationConverter {
 
 	/**
 	 * Extract information about the user to be used in an access token (i.e. for resource servers).
-	 * 
+	 *
 	 * @param userAuthentication an authentication representing a user
 	 * @return a map of key values representing the unique information about the user
 	 */
@@ -43,7 +42,7 @@ public interface UserAuthenticationConverter {
 
 	/**
 	 * Inverse of {@link #convertUserAuthentication(Authentication)}. Extracts an Authentication from a map.
-	 * 
+	 *
 	 * @param map a map of user information
 	 * @return an Authentication representing the user or null if there is none
 	 */

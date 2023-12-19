@@ -32,7 +32,6 @@ import org.springframework.security.oauth2.provider.OAuth2Request;
 /**
  * Default implementation of {@link AccessTokenConverter}.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
@@ -42,7 +41,7 @@ import org.springframework.security.oauth2.provider.OAuth2Request;
 public class DefaultAccessTokenConverter implements AccessTokenConverter {
 
 	private UserAuthenticationConverter userTokenConverter = new DefaultUserAuthenticationConverter();
-	
+
 	private boolean includeGrantType;
 
 	private String scopeAttribute = SCOPE;
@@ -51,7 +50,7 @@ public class DefaultAccessTokenConverter implements AccessTokenConverter {
 
 	/**
 	 * Converter for the part of the data in the token representing a user.
-	 * 
+	 *
 	 * @param userTokenConverter the userTokenConverter to set
 	 */
 	public void setUserTokenConverter(UserAuthenticationConverter userTokenConverter) {
@@ -60,11 +59,11 @@ public class DefaultAccessTokenConverter implements AccessTokenConverter {
 
 	/**
 	 * Flag to indicate the the grant type should be included in the converted token.
-	 * 
+	 *
 	 * @param includeGrantType the flag value (default false)
 	 */
 	public void setIncludeGrantType(boolean includeGrantType) {
-		this.includeGrantType = includeGrantType;	
+		this.includeGrantType = includeGrantType;
 	}
 
 	/**
@@ -110,7 +109,7 @@ public class DefaultAccessTokenConverter implements AccessTokenConverter {
 		if (token.getExpiration() != null) {
 			response.put(EXP, token.getExpiration().getTime() / 1000);
 		}
-		
+
 		if (includeGrantType && authentication.getOAuth2Request().getGrantType()!=null) {
 			response.put(GRANT_TYPE, authentication.getOAuth2Request().getGrantType());
 		}
@@ -153,7 +152,7 @@ public class DefaultAccessTokenConverter implements AccessTokenConverter {
 		}
 		Set<String> resourceIds = new LinkedHashSet<String>(map.containsKey(AUD) ? getAudience(map)
 				: Collections.<String>emptySet());
-		
+
 		Collection<? extends GrantedAuthority> authorities = null;
 		if (user==null && map.containsKey(AUTHORITIES)) {
 			@SuppressWarnings("unchecked")
@@ -167,7 +166,7 @@ public class DefaultAccessTokenConverter implements AccessTokenConverter {
 
 	private Collection<String> getAudience(Map<String, ?> map) {
 		Object auds = map.get(AUD);
-		if (auds instanceof Collection) {			
+		if (auds instanceof Collection) {
 			@SuppressWarnings("unchecked")
 			Collection<String> result = (Collection<String>) auds;
 			return result;

@@ -33,11 +33,10 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 /**
  * A handler mapping for framework endpoints (those annotated with &#64;FrameworkEndpoint).
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
- * 
+ *
  */
 @Deprecated
 public class FrameworkEndpointHandlerMapping extends RequestMappingHandlerMapping {
@@ -71,7 +70,7 @@ public class FrameworkEndpointHandlerMapping extends RequestMappingHandlerMappin
 	/**
 	 * Custom mappings for framework endpoint paths. The keys in the map are the default framework endpoint path, e.g.
 	 * "/oauth/authorize", and the values are the desired runtime paths.
-	 * 
+	 *
 	 * @param patternMap the mappings to set
 	 */
 	public void setMappings(Map<String, String> patternMap) {
@@ -113,7 +112,7 @@ public class FrameworkEndpointHandlerMapping extends RequestMappingHandlerMappin
 	/**
 	 * The name of the request parameter that distinguishes a call to approve an authorization. Default is
 	 * {@link OAuth2Utils#USER_OAUTH_APPROVAL}.
-	 * 
+	 *
 	 * @param approvalParameter the approvalParameter to set
 	 */
 	public void setApprovalParameter(String approvalParameter) {
@@ -127,7 +126,7 @@ public class FrameworkEndpointHandlerMapping extends RequestMappingHandlerMappin
 
 	/**
 	 * Detects &#64;FrameworkEndpoint annotations in handler beans.
-	 * 
+	 *
 	 * @see org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#isHandler(java.lang.Class)
 	 */
 	@Override

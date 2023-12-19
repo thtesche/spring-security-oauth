@@ -57,7 +57,6 @@ import java.util.Map;
 /**
  * OAuth processing filter. This filter should be applied to requests for OAuth protected resources (see OAuth Core 1.0).
  *
- * <p>
  * @deprecated The OAuth 1.0 Protocol <a href="https://tools.ietf.org/html/rfc5849">RFC 5849</a> is obsoleted by the OAuth 2.0 Authorization Framework <a href="https://tools.ietf.org/html/rfc6749">RFC 6749</a>.
  *
  * @author Ryan Heaton
@@ -370,7 +369,7 @@ public abstract class OAuthProviderProcessingFilter implements Filter, Initializ
    * @param response The response.
    * @param failure  The failure.
    * @throws IOException thrown when there's an underlying IO exception
-   * @throws ServletException thrown in the case of an underlying Servlet exception 
+   * @throws ServletException thrown in the case of an underlying Servlet exception
    */
   protected void fail(HttpServletRequest request, HttpServletResponse response, AuthenticationException failure) throws IOException, ServletException {
     SecurityContextHolder.getContext().setAuthentication(null);

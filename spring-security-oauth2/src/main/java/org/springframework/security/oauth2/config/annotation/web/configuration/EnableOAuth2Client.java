@@ -30,31 +30,30 @@ import org.springframework.web.filter.DelegatingFilterProxy;
  * global servlet filter in your application of the {@link DelegatingFilterProxy} that delegates to a bean named
  * "oauth2ClientContextFilter". Once that filter is in place your client app can use another bean provided by this
  * annotation (an {@link AccessTokenRequest}) to create an {@link OAuth2RestTemplate}, e.g.
- * 
+ *
  * <pre>
  * &#064;Configuration
  * &#064;EnableOAuth2Client
  * public class RemoteResourceConfiguration {
- * 
+ *
  * 	&#064;Bean
  *  public OAuth2RestOperations restTemplate(OAuth2ClientContext oauth2ClientContext) {
  * 		return new OAuth2RestTemplate(remote(), oauth2ClientContext);
  * 	}
- * 
+ *
  * }
  * </pre>
- * 
+ *
  * Client apps that use client credentials grants do not need the AccessTokenRequest or the scoped RestOperations (the
  * state is global for the app), but they should still use the filter to trigger the OAuth2RestOperations to obtain a
  * token when necessary. Apps that use password grants need to set the authentication properties in the
  * OAuth2ProtectedResourceDetails before using the RestOperations, and this means the resource details themselves also
  * have to be per session (assuming there are multiple users in the system).
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
- * 
+ *
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

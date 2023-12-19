@@ -36,7 +36,6 @@ import java.util.Set;
 /**
  * Default implementation for a redirect resolver.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Ryan Heaton
@@ -53,7 +52,7 @@ public class DefaultRedirectResolver implements RedirectResolver {
 
 	/**
 	 * Flag to indicate that requested URIs will match if they are a subdomain of the registered value.
-	 * 
+	 *
 	 * @param matchSubdomains the flag value to set (default true)
 	 */
 	public void setMatchSubdomains(boolean matchSubdomains) {
@@ -71,7 +70,7 @@ public class DefaultRedirectResolver implements RedirectResolver {
 
 	/**
 	 * Grant types that are permitted to have a redirect uri.
-	 * 
+	 *
 	 * @param redirectGrantTypes the redirect grant types to set
 	 */
 	public void setRedirectGrantTypes(Collection<String> redirectGrantTypes) {
@@ -116,7 +115,7 @@ public class DefaultRedirectResolver implements RedirectResolver {
 	 * additional parameters which are ignored for the match
 	 * <p>
 	 * For other (non-URL) cases, such as for some implicit clients, the redirect_uri must be an exact match.
-	 * 
+	 *
 	 * @param requestedRedirect The requested redirect URI.
 	 * @param redirectUri The registered redirect URI.
 	 * @return Whether the requested redirect URI "matches" the specified redirect URI.
@@ -184,7 +183,7 @@ public class DefaultRedirectResolver implements RedirectResolver {
 
 	/**
 	 * Check if host matches the registered value.
-	 * 
+	 *
 	 * @param registered the registered host. Can be null.
 	 * @param requested the requested host. Can be null.
 	 * @return true if they match
@@ -198,7 +197,7 @@ public class DefaultRedirectResolver implements RedirectResolver {
 
 	/**
 	 * Attempt to match one of the registered URIs to the that of the requested one.
-	 * 
+	 *
 	 * @param redirectUris the set of the registered URIs to try and find a match. This cannot be null or empty.
 	 * @param requestedRedirect the URI used as part of the request
 	 * @return redirect uri

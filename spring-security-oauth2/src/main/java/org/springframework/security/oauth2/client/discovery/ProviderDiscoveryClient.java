@@ -27,11 +27,9 @@ import java.util.Map;
  * A client that is able to discover provider configuration information
  * as defined by the <i>OpenID Connect Discovery 1.0</i> specification.
  *
- * <p>
  * <b>NOTE:</b> This is a partial implementation that only discovers a small subset
  * of the available provider configuration information.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Joe Grandja

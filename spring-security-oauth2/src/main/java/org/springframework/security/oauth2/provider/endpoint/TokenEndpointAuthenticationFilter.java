@@ -59,7 +59,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
  * the authenticated user. In a vanilla password grant this <b>isn't</b> normally necessary because the token granter
  * will also authenticate the user.
  * </p>
- * 
+ *
  * <p>
  * If this filter is used the Spring Security context will contain an OAuth2Authentication encapsulating (as the
  * authorization request) the form parameters coming into the filter and the client id from the already authenticated
@@ -67,11 +67,10 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
  * authentication manager.
  * </p>
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
- * 
+ *
  */
 @Deprecated
 public class TokenEndpointAuthenticationFilter implements Filter {
@@ -83,7 +82,7 @@ public class TokenEndpointAuthenticationFilter implements Filter {
 	private AuthenticationEntryPoint authenticationEntryPoint = new OAuth2AuthenticationEntryPoint();
 
 	private final AuthenticationManager authenticationManager;
-	
+
 	private final OAuth2RequestFactory oAuth2RequestFactory;
 
 	/**
@@ -98,7 +97,7 @@ public class TokenEndpointAuthenticationFilter implements Filter {
 	/**
 	 * An authentication entry point that can handle unsuccessful authentication. Defaults to an
 	 * {@link OAuth2AuthenticationEntryPoint}.
-	 * 
+	 *
 	 * @param authenticationEntryPoint the authenticationEntryPoint to set
 	 */
 	public void setAuthenticationEntryPoint(AuthenticationEntryPoint authenticationEntryPoint) {
@@ -107,7 +106,7 @@ public class TokenEndpointAuthenticationFilter implements Filter {
 
 	/**
 	 * A source of authentication details for requests that result in authentication.
-	 * 
+	 *
 	 * @param authenticationDetailsSource the authenticationDetailsSource to set
 	 */
 	public void setAuthenticationDetailsSource(
@@ -142,7 +141,7 @@ public class TokenEndpointAuthenticationFilter implements Filter {
 					throw new BadCredentialsException(
 							"No client authentication found. Remember to put a filter upstream of the TokenEndpointAuthenticationFilter.");
 				}
-				
+
 				Map<String, String> map = getSingleValueMap(request);
 				map.put(OAuth2Utils.CLIENT_ID, clientAuth.getName());
 				AuthorizationRequest authorizationRequest = oAuth2RequestFactory.createAuthorizationRequest(map);
@@ -154,7 +153,7 @@ public class TokenEndpointAuthenticationFilter implements Filter {
 				}
 
 				OAuth2Request storedOAuth2Request = oAuth2RequestFactory.createOAuth2Request(authorizationRequest);
-				
+
 				SecurityContextHolder.getContext().setAuthentication(
 						new OAuth2Authentication(storedOAuth2Request, authResult));
 
@@ -202,7 +201,7 @@ public class TokenEndpointAuthenticationFilter implements Filter {
 	 * If the incoming request contains user credentials in headers or parameters then extract them here into an
 	 * Authentication token that can be validated later. This implementation only recognises password grant requests and
 	 * extracts the username and password.
-	 * 
+	 *
 	 * @param request the incoming request, possibly with user credentials
 	 * @return an authentication for validation (or null if there is no further authentication)
 	 */
@@ -220,7 +219,7 @@ public class TokenEndpointAuthenticationFilter implements Filter {
 	private Set<String> getScope(HttpServletRequest request) {
 		return OAuth2Utils.parseParameterList(request.getParameter(OAuth2Utils.SCOPE));
 	}
-	
+
 	public void init(FilterConfig filterConfig) throws ServletException {
 	}
 

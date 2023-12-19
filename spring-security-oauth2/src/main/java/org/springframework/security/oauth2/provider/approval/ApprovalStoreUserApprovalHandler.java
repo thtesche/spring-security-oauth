@@ -41,11 +41,10 @@ import org.springframework.util.Assert;
 /**
  * A user approval handler that remembers approval decisions by consulting existing approvals.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
- * 
+ *
  */
 @Deprecated
 public class ApprovalStoreUserApprovalHandler implements UserApprovalHandler, InitializingBean {
@@ -62,7 +61,7 @@ public class ApprovalStoreUserApprovalHandler implements UserApprovalHandler, In
 
 	/**
 	 * Service to load client details (optional) for auto approval checks.
-	 * 
+	 *
 	 * @param clientDetailsService a client details service
 	 */
 	public void setClientDetailsService(ClientDetailsService clientDetailsService) {
@@ -71,7 +70,7 @@ public class ApprovalStoreUserApprovalHandler implements UserApprovalHandler, In
 
 	/**
 	 * The prefix applied to incoming parameters that signal approval or denial of a scope.
-	 * 
+	 *
 	 * @param scopePrefix the prefix (default {@link OAuth2Utils#SCOPE_PREFIX})
 	 */
 	public void setScopePrefix(String scopePrefix) {
@@ -193,10 +192,10 @@ public class ApprovalStoreUserApprovalHandler implements UserApprovalHandler, In
 	 * authenticated. A scope that was requested in the authorization request can be approved by sending a request
 	 * parameter <code>scope.&lt;scopename&gt;</code> equal to "true" or "approved" (otherwise it will be assumed to
 	 * have been denied). The {@link ApprovalStore} will be updated to reflect the inputs.
-	 * 
+	 *
 	 * @param authorizationRequest The authorization request.
 	 * @param userAuthentication the current user authentication
-	 * 
+	 *
 	 * @return An approved request if all scopes have been approved by the current user.
 	 */
 	public AuthorizationRequest updateAfterApproval(AuthorizationRequest authorizationRequest,

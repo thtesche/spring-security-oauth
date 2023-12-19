@@ -35,7 +35,6 @@ import org.springframework.web.client.ResponseExtractor;
  * authenticated and if the user has approved the grant of the access token. Only if those two conditions are met should
  * an access token be available through this provider.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
@@ -66,7 +65,7 @@ public class ImplicitAccessTokenProvider extends OAuth2AccessTokenSupport implem
 					resource, getParametersForTokenRequest(resource, request), getHeadersForTokenRequest(request));
 			if (token==null) {
 				// Probably an authenticated request, but approval is required.  TODO: prompt somehow?
-				throw new UserRedirectRequiredException(resource.getUserAuthorizationUri(), request.toSingleValueMap());				
+				throw new UserRedirectRequiredException(resource.getUserAuthorizationUri(), request.toSingleValueMap());
 			}
 			return token;
 		}
@@ -97,7 +96,7 @@ public class ImplicitAccessTokenProvider extends OAuth2AccessTokenSupport implem
 		MultiValueMap<String, String> form = new LinkedMultiValueMap<String, String>();
 		form.set("response_type", "token");
 		form.set("client_id", resource.getClientId());
-		
+
 		if (resource.isScoped()) {
 
 			StringBuilder builder = new StringBuilder();

@@ -1,5 +1,5 @@
 /*******************************************************************************
- *     Cloud Foundry 
+ *     Cloud Foundry
  *     Copyright (c) [2009-2014] Pivotal Software, Inc. All Rights Reserved.
  *
  *     This product is licensed to you under the Apache License, Version 2.0 (the "License").
@@ -27,7 +27,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * OAuth2 token services that produces JWT encoded token values.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
@@ -51,7 +50,7 @@ public class TokenKeyEndpoint {
      * Get the verification key for the token signatures. The principal has to
      * be provided only if the key is secret
      * (shared not public).
-     * 
+     *
      * @param principal the currently authenticated user if there is one
      * @return the key used to verify tokens
      */

@@ -11,17 +11,16 @@ import org.springframework.security.oauth2.provider.endpoint.TokenEndpoint;
 /**
  * Represents an OAuth2 token request, made at the {@link TokenEndpoint}. The requestParameters map should contain the
  * original, unmodified parameters from the original OAuth2 request.
- * 
+ *
  * In the implicit flow, a token is requested through the {@link AuthorizationEndpoint} directly, and in that case the
  * {@link AuthorizationRequest} is converted into a {@link TokenRequest} for processing through the token granting
  * chain.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Amanda Anganes
  * @author Dave Syer
- * 
+ *
  */
 @SuppressWarnings("serial")
 @Deprecated
@@ -37,7 +36,7 @@ public class TokenRequest extends BaseRequest {
 
 	/**
 	 * Full constructor. Sets this TokenRequest's requestParameters map to an unmodifiable version of the one provided.
-	 * 
+	 *
 	 * @param requestParameters
 	 * @param clientId
 	 * @param scope
@@ -66,9 +65,9 @@ public class TokenRequest extends BaseRequest {
 	/**
 	 * Set the scope value. If the collection contains only a single scope value, this method will parse that value into
 	 * a collection using {@link OAuth2Utils#parseParameterList}.
-	 * 
+	 *
 	 * @see AuthorizationRequest#setScope
-	 * 
+	 *
 	 * @param scope
 	 */
 	public void setScope(Collection<String> scope) {
@@ -78,9 +77,9 @@ public class TokenRequest extends BaseRequest {
 	/**
 	 * Set the Request Parameters on this authorization request, which represent the original request parameters and
 	 * should never be changed during processing. The map passed in is wrapped in an unmodifiable map instance.
-	 * 
+	 *
 	 * @see AuthorizationRequest#setRequestParameters
-	 * 
+	 *
 	 * @param requestParameters
 	 */
 	public void setRequestParameters(Map<String, String> requestParameters) {

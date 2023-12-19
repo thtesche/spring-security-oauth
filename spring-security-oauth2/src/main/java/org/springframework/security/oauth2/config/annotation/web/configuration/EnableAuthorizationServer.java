@@ -36,11 +36,10 @@ import org.springframework.web.servlet.DispatcherServlet;
  * authentication on the client's credentials. Clients <em>must</em> be registered by providing a
  * {@link ClientDetailsService} through one or more AuthorizationServerConfigurers.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
- * 
+ *
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

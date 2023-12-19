@@ -24,11 +24,10 @@ import org.springframework.security.oauth2.provider.expression.OAuth2WebSecurity
  * and in general (like with other Security configurers), if more than one configures the same property, then the last
  * one wins. The configurers are sorted by {@link Order} before being applied.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
- * 
+ *
  */
 @Deprecated
 public interface ResourceServerConfigurer {
@@ -36,7 +35,7 @@ public interface ResourceServerConfigurer {
 	/**
 	 * Add resource-server specific properties (like a resource id). The defaults should work for many applications, but
 	 * you might want to change at least the resource id.
-	 * 
+	 *
 	 * @param resources configurer for the resource server
 	 * @throws Exception if there is a problem
 	 */
@@ -46,7 +45,7 @@ public interface ResourceServerConfigurer {
 	 * Use this to configure the access rules for secure resources. By default all resources <i>not</i> in "/oauth/**"
 	 * are protected (but no specific rules about scopes are given, for instance). You also get an
 	 * {@link OAuth2WebSecurityExpressionHandler} by default.
-	 * 
+	 *
 	 * @param http the current http filter configuration
 	 * @throws Exception if there is a problem
 	 */

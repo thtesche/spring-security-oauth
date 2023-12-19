@@ -24,7 +24,6 @@ import org.springframework.security.oauth2.client.token.grant.client.ClientCrede
  * client credentials grant. Client credentials grants will always have the same credentials for all requests, so
  * there's no point protecting the context with session and request scopes.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer

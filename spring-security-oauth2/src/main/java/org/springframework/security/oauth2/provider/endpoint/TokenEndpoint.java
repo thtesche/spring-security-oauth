@@ -57,18 +57,17 @@ import java.util.Set;
  * handled by the provided {@link #setTokenGranter(org.springframework.security.oauth2.provider.TokenGranter) token
  * granter}.
  * </p>
- * 
+ *
  * <p>
  * Clients must be authenticated using a Spring Security {@link Authentication} to access this endpoint, and the client
  * id is extracted from the authentication token. The best way to arrange this (as per the OAuth2 spec) is to use HTTP
  * basic authentication for this endpoint with standard Spring Security support.
  * </p>
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer
- * 
+ *
  */
 @FrameworkEndpoint
 @Deprecated
@@ -88,7 +87,7 @@ public class TokenEndpoint extends AbstractEndpoint {
 		}
 		return postAccessToken(principal, parameters);
 	}
-	
+
 	@RequestMapping(value = "/oauth/token", method=RequestMethod.POST)
 	public ResponseEntity<OAuth2AccessToken> postAccessToken(
 			Principal principal, @RequestParam Map<String, String> parameters)
@@ -166,7 +165,7 @@ public class TokenEndpoint extends AbstractEndpoint {
 		}
 	    return getExceptionTranslator().translate(e);
 	}
-	
+
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<OAuth2Exception> handleException(Exception e) throws Exception {
 		if (logger.isErrorEnabled()) {
@@ -174,7 +173,7 @@ public class TokenEndpoint extends AbstractEndpoint {
 		}
 		return getExceptionTranslator().translate(e);
 	}
-	
+
 	@ExceptionHandler(ClientRegistrationException.class)
 	public ResponseEntity<OAuth2Exception> handleClientRegistrationException(Exception e) throws Exception {
 		if (logger.isWarnEnabled()) {

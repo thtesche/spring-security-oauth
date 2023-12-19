@@ -19,7 +19,6 @@ import org.springframework.security.oauth2.provider.OAuth2Request;
  * (client_credentials grant) it checks against authorities of client instead of scopes by default. Activate by adding
  * <code>CLIENT_HAS_SCOPE</code> to security attributes.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Dave Syer

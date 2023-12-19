@@ -18,20 +18,19 @@ import org.springframework.web.bind.annotation.SessionAttributes;
  * throughout the authorization process, and is therefore treated as ephemeral
  * and not to be stored long term. For long term storage, use the read-only
  * {@link OAuth2Request} class.
- * 
+ *
  * HTTP request parameters are stored in the parameters map, and any processing
  * the server makes throughout the lifecycle of a request are stored on
  * individual properties. The original request parameters will remain available
  * through the parameters map. For convenience, constants are defined in order
  * to get at those original values. However, the parameters map is unmodifiable
  * so that processing cannot drop the original values.
- * 
+ *
  * This class is {@link Serializable} in order to support storage of the
  * authorization request as a {@link SessionAttributes} member while the end
  * user through the authorization process (which may span several page
  * requests).
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Ryan Heaton
@@ -133,7 +132,7 @@ public class AuthorizationRequest extends BaseRequest implements Serializable {
 	/**
 	 * Convenience constructor for unit tests, where client ID and scope are
 	 * often the only needed fields.
-	 * 
+	 *
 	 * @param clientId
 	 * @param scopes
 	 */
@@ -145,7 +144,7 @@ public class AuthorizationRequest extends BaseRequest implements Serializable {
 	/**
 	 * Convenience method to set resourceIds and authorities on this request by
 	 * inheriting from a ClientDetails object.
-	 * 
+	 *
 	 * @param clientDetails
 	 */
 	public void setResourceIdsAndAuthoritiesFromClientDetails(ClientDetails clientDetails) {
@@ -214,9 +213,9 @@ public class AuthorizationRequest extends BaseRequest implements Serializable {
 	 * Set the scope value. If the collection contains only a single scope
 	 * value, this method will parse that value into a collection using
 	 * {@link OAuth2Utils#parseParameterList}.
-	 * 
+	 *
 	 * @see TokenRequest#setScope
-	 * 
+	 *
 	 * @param scope
 	 */
 	public void setScope(Collection<String> scope) {
@@ -227,9 +226,9 @@ public class AuthorizationRequest extends BaseRequest implements Serializable {
 	 * Set the Request Parameters on this authorization request, which represent
 	 * the original request parameters and should never be changed during
 	 * processing. The map passed in is wrapped in an unmodifiable map instance.
-	 * 
+	 *
 	 * @see TokenRequest#setRequestParameters
-	 * 
+	 *
 	 * @param requestParameters
 	 */
 	public void setRequestParameters(Map<String, String> requestParameters) {

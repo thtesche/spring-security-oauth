@@ -66,7 +66,6 @@ import org.springframework.web.client.ResponseExtractor;
 /**
  * Provider for obtaining an oauth2 access token by using an authorization code.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Ryan Heaton
@@ -82,10 +81,10 @@ public class AuthorizationCodeAccessTokenProvider extends OAuth2AccessTokenSuppo
 	private RequestEnhancer authorizationRequestEnhancer = new DefaultRequestEnhancer();
 
 	private boolean stateMandatory = true;
-	
+
 	/**
 	 * Flag to say that the use of state parameter is mandatory.
-	 * 
+	 *
 	 * @param stateMandatory the flag value (default true)
 	 */
 	public void setStateMandatory(boolean stateMandatory) {
@@ -102,7 +101,7 @@ public class AuthorizationCodeAccessTokenProvider extends OAuth2AccessTokenSuppo
 
 	/**
 	 * Prefix for scope approval parameters.
-	 * 
+	 *
 	 * @param scopePrefix
 	 */
 	public void setScopePrefix(String scopePrefix) {

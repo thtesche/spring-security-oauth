@@ -32,7 +32,6 @@ import org.springframework.util.MultiValueMap;
  * Converter that can handle inbound form data and convert it to an OAuth2 exception. Needed to support external servers,
  * like Facebook that might not send JSON data.
  *
- * <p>
  * @deprecated See the <a href="https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide">OAuth 2.0 Migration Guide</a> for Spring Security 5.
  *
  * @author Rob Winch
