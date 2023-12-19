@@ -14,15 +14,19 @@ package org.springframework.security.oauth2.http.converter.jaxb;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.powermock.api.mockito.PowerMockito.mockStatic;
 
 import java.io.IOException;
 import java.util.Date;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.ArgumentMatcher;
+import org.mockito.ArgumentMatchers;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2RefreshToken;
@@ -38,6 +42,7 @@ import org.springframework.security.oauth2.common.DefaultOAuth2RefreshToken;
 public class JaxbOAuth2AccessTokenMessageConverterTests extends BaseJaxbMessageConverterTest {
 	private JaxbOAuth2AccessTokenMessageConverter converter;
 	private DefaultOAuth2AccessToken accessToken;
+	private long now = 1323123715041L;
 
 	@Before
 	public void before() throws Exception {
@@ -45,6 +50,8 @@ public class JaxbOAuth2AccessTokenMessageConverterTests extends BaseJaxbMessageC
 		accessToken = new DefaultOAuth2AccessToken("SlAV32hkKG");
 		accessToken.setExpiration(expiration);
 		accessToken.setRefreshToken(new DefaultOAuth2RefreshToken("8xLOxBtZp8"));
+		mockStatic(System.class);
+		when(System.currentTimeMillis()).thenReturn(now);
 	}
 
 	@Test
