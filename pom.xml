@@ -271,7 +271,7 @@
                   <configuration>
                       <argLine>--add-modules java.xml.bind</argLine>
                       <argLine>--add-modules java.activation</argLine>
-                      <argLine>--add-opens java.xml/jdk.xml.internal=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED </argLine>
+                      <argLine>--add-opens java.base/jdk.internal.access=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.xml/jdk.xml.internal=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED </argLine>
                       <skip>${skipTests}</skip>
                       <includes>
                           <include>**/*Tests.java</include>
