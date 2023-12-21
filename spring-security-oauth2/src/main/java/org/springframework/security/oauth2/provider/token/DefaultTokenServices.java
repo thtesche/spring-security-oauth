@@ -1,11 +1,11 @@
 /*
  * Copyright 2008 Web Cohesion
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
- * 
+ *
  * https://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
@@ -16,6 +16,7 @@ package org.springframework.security.oauth2.provider.token;
 import java.nio.charset.Charset;
 import java.util.Date;
 import java.util.Set;
+import java.util.UUID;
 
 import org.apache.commons.codec.binary.Base64;
 
@@ -206,7 +207,7 @@ public class DefaultTokenServices implements AuthorizationServerTokenServices, R
 
 	/**
 	 * Create a refreshed authentication.
-	 * 
+	 *
 	 * @param authentication The authentication.
 	 * @param request The scope for the refreshed token.
 	 * @return The refreshed authentication.
@@ -308,8 +309,8 @@ public class DefaultTokenServices implements AuthorizationServerTokenServices, R
 	}
 
 	private OAuth2AccessToken createAccessToken(OAuth2Authentication authentication, OAuth2RefreshToken refreshToken) {
-		String tokenValue = new String(Base64.encodeBase64URLSafe(DEFAULT_TOKEN_GENERATOR.generateKey()),  US_ASCII);
-		DefaultOAuth2AccessToken token = new DefaultOAuth2AccessToken(tokenValue);
+//		String tokenValue = new String(Base64.encodeBase64URLSafe(DEFAULT_TOKEN_GENERATOR.generateKey()),  US_ASCII);
+		DefaultOAuth2AccessToken token = new DefaultOAuth2AccessToken(UUID.randomUUID().toString());
 		int validitySeconds = getAccessTokenValiditySeconds(authentication.getOAuth2Request());
 		if (validitySeconds > 0) {
 			token.setExpiration(new Date(System.currentTimeMillis() + (validitySeconds * 1000L)));
@@ -322,7 +323,7 @@ public class DefaultTokenServices implements AuthorizationServerTokenServices, R
 
 	/**
 	 * The access token validity period in seconds
-	 * 
+	 *
 	 * @param clientAuth the current authorization request
 	 * @return the access token validity period in seconds
 	 */
@@ -339,7 +340,7 @@ public class DefaultTokenServices implements AuthorizationServerTokenServices, R
 
 	/**
 	 * The refresh token validity period in seconds
-	 * 
+	 *
 	 * @param clientAuth the current authorization request
 	 * @return the refresh token validity period in seconds
 	 */
@@ -357,7 +358,7 @@ public class DefaultTokenServices implements AuthorizationServerTokenServices, R
 	/**
 	 * Is a refresh token supported for this client (or the global setting if
 	 * {@link #setClientDetailsService(ClientDetailsService) clientDetailsService} is not set.
-	 * 
+	 *
 	 * @param clientAuth the current authorization request
 	 * @return boolean to indicate if refresh token is supported
 	 */
@@ -371,7 +372,7 @@ public class DefaultTokenServices implements AuthorizationServerTokenServices, R
 
 	/**
 	 * An access token enhancer that will be applied to a new token before it is saved in the token store.
-	 * 
+	 *
 	 * @param accessTokenEnhancer the access token enhancer to set
 	 */
 	public void setTokenEnhancer(TokenEnhancer accessTokenEnhancer) {
@@ -381,7 +382,7 @@ public class DefaultTokenServices implements AuthorizationServerTokenServices, R
 	/**
 	 * The validity (in seconds) of the refresh token. If less than or equal to zero then the tokens will be
 	 * non-expiring.
-	 * 
+	 *
 	 * @param refreshTokenValiditySeconds The validity (in seconds) of the refresh token.
 	 */
 	public void setRefreshTokenValiditySeconds(int refreshTokenValiditySeconds) {
@@ -392,7 +393,7 @@ public class DefaultTokenServices implements AuthorizationServerTokenServices, R
 	 * The default validity (in seconds) of the access token. Zero or negative for non-expiring tokens. If a client
 	 * details service is set the validity period will be read from the client, defaulting to this value if not defined
 	 * by the client.
-	 * 
+	 *
 	 * @param accessTokenValiditySeconds The validity (in seconds) of the access token.
 	 */
 	public void setAccessTokenValiditySeconds(int accessTokenValiditySeconds) {
@@ -401,7 +402,7 @@ public class DefaultTokenServices implements AuthorizationServerTokenServices, R
 
 	/**
 	 * Whether to support the refresh token.
-	 * 
+	 *
 	 * @param supportRefreshToken Whether to support the refresh token.
 	 */
 	public void setSupportRefreshToken(boolean supportRefreshToken) {
@@ -410,7 +411,7 @@ public class DefaultTokenServices implements AuthorizationServerTokenServices, R
 
 	/**
 	 * Whether to reuse refresh tokens (until expired).
-	 * 
+	 *
 	 * @param reuseRefreshToken Whether to reuse refresh tokens (until expired).
 	 */
 	public void setReuseRefreshToken(boolean reuseRefreshToken) {
@@ -419,7 +420,7 @@ public class DefaultTokenServices implements AuthorizationServerTokenServices, R
 
 	/**
 	 * The persistence strategy for token storage.
-	 * 
+	 *
 	 * @param tokenStore the store for access and refresh tokens.
 	 */
 	public void setTokenStore(TokenStore tokenStore) {
@@ -429,7 +430,7 @@ public class DefaultTokenServices implements AuthorizationServerTokenServices, R
 	/**
 	 * An authentication manager that will be used (if provided) to check the user authentication when a token is
 	 * refreshed.
-	 * 
+	 *
 	 * @param authenticationManager the authenticationManager to set
 	 */
 	public void setAuthenticationManager(AuthenticationManager authenticationManager) {
@@ -439,7 +440,7 @@ public class DefaultTokenServices implements AuthorizationServerTokenServices, R
 	/**
 	 * The client details service to use for looking up clients (if necessary). Optional if the access token expiry is
 	 * set globally via {@link #setAccessTokenValiditySeconds(int)}.
-	 * 
+	 *
 	 * @param clientDetailsService the client details service
 	 */
 	public void setClientDetailsService(ClientDetailsService clientDetailsService) {

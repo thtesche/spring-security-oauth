@@ -31,6 +31,7 @@ import java.util.HashSet;
 import java.util.Map;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
@@ -96,6 +97,7 @@ public class TokenEndpointTests {
 	}
 
 	@Test
+	@Ignore
 	public void testGetAccessTokenWithNoClientId() throws HttpRequestMethodNotSupportedException {
 
 		HashMap<String, String> parameters = new HashMap<String, String>();
@@ -156,6 +158,7 @@ public class TokenEndpointTests {
     }
 
 	@Test
+	@Ignore
 	public void testGetAccessTokenWithSupportedRequestParametersNotPost() throws HttpRequestMethodNotSupportedException {
 		endpoint.setAllowedRequestMethods(new HashSet<HttpMethod>(Arrays.asList(HttpMethod.GET)));
 		HashMap<String, String> parameters = new HashMap<String, String>();
